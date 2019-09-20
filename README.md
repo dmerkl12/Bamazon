@@ -8,4 +8,4 @@ To get started with the bamazon customer interface, you will type node bamazonCu
 
 Here's a video demonstration.
 
-[Click me](https://drive.google.com/file/d/1nZNypUb2L1G2oDyYr_okMWiUFOK3CaAl/view){: .btn}
+[Click me](https://drive.google.com/file/d/1nZNypUb2L1G2oDyYr_okMWiUFOK3CaAl/view)
