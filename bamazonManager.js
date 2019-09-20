@@ -85,4 +85,4 @@ checkInventory (choiceID, inventory) {
       }
     }
     return null;
-  }
+}

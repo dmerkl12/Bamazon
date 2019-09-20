@@ -62,22 +62,27 @@ function askQuantity(product){
     }]).then(function (answer){
       exit(answer.productQuantity)
       let quantity = parseInt(answer.productQuantity)
+      let cost = product.price * answer.productQuantity
       if (quantity > product.stock_quantity){
-        console.log("insufficient quantity")
+        console.log("")
+        console.log(chalk.blue("insufficient quantity"))
+        console.log("")
         start();
       }
       else {
-        makePurchase(product, quantity)
+        makePurchase(product, quantity, cost)
       }
     })
    
 }
-function makePurchase(product, quantity){
+function makePurchase(product, quantity, cost){
   connection.query("UPDATE products SET stock_quantity = stock_quantity - ? WHERE item_id = ?", 
   [quantity, product.item_id], 
   function(err, res){
+
     console.log("")
     console.log(chalk.green("You succesfully purchased " + quantity + " " + product.product_name + "(s)"))
+    console.log(chalk.green("The total cost is " + cost))
     console.log("")
     start()
   })
